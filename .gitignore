@@ -1,6 +1,6 @@
 node_modules/**/*
-./idea/*
-./.expo-shared/*
+.idea/*
+.expo-shared/*
 .expo/*
 npm-debug.*
 *.jks
