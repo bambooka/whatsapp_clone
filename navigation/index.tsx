@@ -6,7 +6,7 @@ import {Octicons, MaterialCommunityIcons} from '@expo/vector-icons'
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import {RootStackParamList} from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
 
@@ -31,23 +31,29 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{
       headerShown: true,
       headerStyle: {
-        backgroundColor: Colors.light.tint
+        backgroundColor: Colors.dark.tint,
+        borderBottomWidth: 0,
+        elevation: 0,
+        shadowOpacity: .0,
       },
       headerTitleAlign: 'left',
       headerTitleStyle: {
         fontWeight: 'bold',
       },
-      headerTintColor: Colors.light.background
+      headerTintColor: Colors.dark.background
     }}>
       <Stack.Screen name="Root" options={{
         title: 'WhatsApp',
+        headerTitleStyle: {
+          color: Colors.dark.text,
+        },
         headerRight: () => {
           return <View style={styles.headerRight}>
-            <Octicons name="search" size={24} color="white" />
-            <MaterialCommunityIcons name="dots-vertical" size={24} color="white" />
+            <Octicons name="search" size={18} color="white" />
+            <MaterialCommunityIcons name="dots-vertical" size={22} color="white" />
           </View>;
         },
-      }} component={BottomTabNavigator}/>
+      }} component={MainTabNavigator}/>
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{title: 'Oops!'}}/>
     </Stack.Navigator>
   );
@@ -57,6 +63,7 @@ const styles = StyleSheet.create({
   headerRight: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
     width: 60,
     marginRight: 10
   }
