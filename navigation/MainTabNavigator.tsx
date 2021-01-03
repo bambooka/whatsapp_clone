@@ -7,6 +7,7 @@ import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs
 
 import {Fontisto} from "@expo/vector-icons";
 import {Text, TouchableOpacity, View, StyleSheet} from "react-native";
+import ChatList from "../screens/ChatList";
 
 const MainTab = createMaterialTopTabNavigator<MainTabParamList>();
 
@@ -107,21 +108,15 @@ export default function MainTabNavigator() {
       />
       <MainTab.Screen
         name="Chats"
-        component={() => <View>
-          <Text>ggg</Text>
-        </View>}
+        component={ChatList}
       />
       <MainTab.Screen
         name="Status"
-        component={() => <View>
-          <Text>hhh</Text>
-        </View>}
+        component={ChatList}
       />
       <MainTab.Screen
         name="Calls"
-        component={() => <View>
-          <Text>jjj</Text>
-        </View>}
+        component={ChatList}
       />
     </MainTab.Navigator>
   );
